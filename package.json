@@ -14,5 +14,10 @@
     "@nuxtjs/tailwindcss": "^6.8.0",
     "@types/node": "^18.16.19",
     "nuxt": "^3.6.2"
+  },
+  "dependencies": {
+    "@nuxt/image": "rc",
+    "@pinia/nuxt": "^0.4.11",
+    "pinia": "^2.1.6"
   }
 }

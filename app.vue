@@ -1,35 +1,20 @@
 <template>
-  <div class="p-4">
-    <UCard>
-      <template #header>
-        <img
-          class="w-full rounded"
-          src="https://tailwindcss.com/img/card-top.jpg"
-          alt="Sunset in the mountains"
-        />
-      </template>
-      <div class="font-bold text-xl mb-2">The Coldest Sunset</div>
-      <p class="text-gray-700 dark:text-gray-300">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus
-        quia, nulla! Maiores et perferendis eaque, exercitationem praesentium
-        nihil.
-      </p>
-      <template #footer>
-        <div class="flex gap-2">
-          <UBadge>#photography</UBadge>
-          <UBadge>#travel</UBadge>
-          <UBadge>#winter</UBadge>
-        </div>
-      </template>
-    </UCard>
+  <div class="app-container">
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </div>
 </template>
 
-<style lang="postcss" scoped>
-.badge {
-  @apply inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700;
-  &:hover {
-    @apply bg-gray-300;
-  }
+<script setup lang="ts">
+</script>
+
+<style lang="postcss">
+body, html {
+  min-height: 100%;
+}
+
+.app-container {
+  @apply mx-auto;
 }
 </style>
