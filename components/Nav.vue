@@ -57,78 +57,7 @@
         </div>
         <div class="sidebar-content_items-playlist">
           <span class="text-xs mb-1 text-gray-400">Playlists</span>
-          <NuxtLink class="inline-flex space-x-2" to="/">
-            <RecentlyAdded id="svg-recently-added"></RecentlyAdded>
-            <span>Recently Added</span>
-          </NuxtLink>
-          <NuxtLink class="inline-flex space-x-2" to="/">
-            <Artist id="svg-artist"></Artist>
-            <span>Artists</span>
-          </NuxtLink>
-          <NuxtLink class="inline-flex space-x-2" to="/">
-            <Album id="svg-album"></Album>
-            <span>Albums</span>
-          </NuxtLink>
-          <NuxtLink class="inline-flex space-x-2" to="/">
-            <Song id="svg-song"></Song>
-            <span>Songs</span>
-          </NuxtLink>
-          <NuxtLink class="inline-flex space-x-2" to="/">
-            <MadeForYou id="svg-made-for-you"></MadeForYou>
-            <span>Made for You</span>
-          </NuxtLink>
-          <NuxtLink class="inline-flex space-x-2" to="/">
-            <RecentlyAdded id="svg-recently-added"></RecentlyAdded>
-            <span>Recently Added</span>
-          </NuxtLink>
-          <NuxtLink class="inline-flex space-x-2" to="/">
-            <Artist id="svg-artist"></Artist>
-            <span>Artists</span>
-          </NuxtLink>
-          <NuxtLink class="inline-flex space-x-2" to="/">
-            <Album id="svg-album"></Album>
-            <span>Albums</span>
-          </NuxtLink>
-          <NuxtLink class="inline-flex space-x-2" to="/">
-            <Song id="svg-song"></Song>
-            <span>Songs</span>
-          </NuxtLink>
-          <NuxtLink class="inline-flex space-x-2" to="/">
-            <MadeForYou id="svg-made-for-you"></MadeForYou>
-            <span>Made for You</span>
-          </NuxtLink>
-          <NuxtLink class="inline-flex space-x-2" to="/">
-            <Album id="svg-album"></Album>
-            <span>Albums</span>
-          </NuxtLink>
-          <NuxtLink class="inline-flex space-x-2" to="/">
-            <Song id="svg-song"></Song>
-            <span>Songs</span>
-          </NuxtLink>
-          <NuxtLink class="inline-flex space-x-2" to="/">
-            <MadeForYou id="svg-made-for-you"></MadeForYou>
-            <span>Made for You</span>
-          </NuxtLink>
-          <NuxtLink class="inline-flex space-x-2" to="/">
-            <RecentlyAdded id="svg-recently-added"></RecentlyAdded>
-            <span>Recently Added</span>
-          </NuxtLink>
-          <NuxtLink class="inline-flex space-x-2" to="/">
-            <Artist id="svg-artist"></Artist>
-            <span>Artists</span>
-          </NuxtLink>
-          <NuxtLink class="inline-flex space-x-2" to="/">
-            <Album id="svg-album"></Album>
-            <span>Albums</span>
-          </NuxtLink>
-          <NuxtLink class="inline-flex space-x-2" to="/">
-            <Song id="svg-song"></Song>
-            <span>Songs</span>
-          </NuxtLink>
-          <NuxtLink class="inline-flex space-x-2" to="/">
-            <MadeForYou id="svg-made-for-you"></MadeForYou>
-            <span>Made for You</span>
-          </NuxtLink>
+          <!--Show all playlists-->
         </div>
       </div>
     </div>
@@ -163,9 +92,17 @@ import OpenMusic from '~/components/Svg/Music.vue'
   .sidebar {
     height: auto;
     width: 260px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 130px calc(100vh - 180px) auto;
+    grid-template-areas:
+      "logoInput"
+      "scrollable"
+      "openMusic";
     @apply border-r border-gray-800;
 
     &-header {
+      grid-area: logoInput;
       @apply pb-3;
 
       svg {
@@ -176,7 +113,8 @@ import OpenMusic from '~/components/Svg/Music.vue'
     &-content {
       overflow-y: auto;
       overflow-x: hidden;
-      height: calc(100vh - 180px);
+      //height: calc(100vh - 180px);
+      grid-area: scrollable;
 
       &_items {
         display: grid;
@@ -205,6 +143,7 @@ import OpenMusic from '~/components/Svg/Music.vue'
     }
 
     &-footer {
+      grid-area: openMusic;
       @apply inline-flex px-10 items-center py-3 gap-2;
 
       #svg-target-blank, #svg-open-music {
