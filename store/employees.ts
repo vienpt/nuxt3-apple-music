@@ -59,7 +59,6 @@ export const useEmployeesStore = defineStore('employees', {
   },
   actions: {
     setPopularity(popularity: string, id: number) {
-      debugger
       const index = this.employees.findIndex((f) => f.id === id)
       this.employees[index].popularity = +popularity
       this.popularity = +popularity

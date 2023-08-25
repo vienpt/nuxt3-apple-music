@@ -36,9 +36,7 @@ const employees = computed(() => useEmployees.getEmployees)
 
 watch(() => useEmployees.popularity, (val) => {
   if (val) {
-    debugger
     nextTick(() => {
-      debugger
       popularity.value = val
     })
   }
